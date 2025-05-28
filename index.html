@@ -29,7 +29,6 @@
     </div>
   </header>
 
-  <!-- Hero Banner -->
   <section class="hero">
     <h1>Shop Authentic Vans Clothing</h1>
   </section>
@@ -118,12 +117,58 @@
     </div>
   </section>
 
+
   <!-- Footer -->
   <footer>
     <p>© 2025 Vans Clothing Store. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    let cartCount = 0;
+
+    function toggleMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      navMenu.classList.toggle('active');
+      navToggle.checked = !navToggle.checked;
+    }
+
+    function closeMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      navMenu.classList.remove('active');
+      navToggle.checked = false;
+    }
+
+    function addToCart(productName) {
+      cartCount++;
+      const cartCounter = document.querySelector('.cart-counter');
+      cartCounter.setAttribute('data-count', cartCount);
+      if (cartCount > 0) {
+        cartCounter.classList.add('has-items');
+      }
+      alert(`${productName} added to cart! Total items: ${cartCount}`);
+    }
+
+    // Accessibility: Allow Enter key to toggle menu
+    document.querySelector('.hamburger').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const navMenu = document.querySelector('.nav-menu');
+      const hamburger = document.querySelector('.hamburger');
+      if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>
 
 </body>
 </html>
