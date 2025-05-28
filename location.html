@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vans Store Locator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()" aria-label="Toggle navigation"></i>
+    <input type="checkbox" id="nav-toggle" />
+    <nav class="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="aboutus.html" onclick="closeMenu()">About Us</a>
+      <a href="contactus.html" onclick="closeMenu()">Contact Us</a>
+      <a href="feedback.html" onclick="closeMenu()">FeedBack</a>
+    </nav>
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Vans clothing..." aria-label="Search" />
+    </div>
+    <div class="icons">
+      <a href="location.html" aria-label="Store locator"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="signup.html" aria-label="User profile"><i class="fas fa-user"></i></a>
+      <a href="cart.html" aria-label="Shopping cart"><i class="fas fa-shopping-cart cart-counter" data-count="0"></i></a>
+    </div>
+  </header>
+
+  <!-- Store Locator Section -->
+  <section class="store-locator">
+    <h2>Find a Vans Store Near You</h2>
+    <p>This are our store's address.</p>
+    <div class="map-container">
+    <div class="store-list">
+      <div>
+        <h3>Vans Store - Gaborone</h3>
+        <p>123 Main Street, Gaborone, 8001</p>
+        <p>Phone: +267 72 123 567</p>
+        <p>Hours: Mon-Sat 9 AM - 6 PM, Sun 10 AM - 4 PM</p>
+      </div>
+      <div>
+        <h3>Vans Store - Francistown</h3>
+        <p>456 High Road, Francistown, 2000</p>
+        <p>Phone: +267 79 876 543</p>
+        <p>Hours: Mon-Sat 9 AM - 7 PM, Sun 10 AM - 5 PM</p>
+      </div>
+      <div>
+        <h3>Vans Store - Orapa</h3>
+        <p>789 Beach Avenue, Durban, 4001</p>
+        <p>Phone: +267 73 555 234</p>
+        <p>Hours: Mon-Sat 10 AM - 6 PM, Sun 11 AM - 3 PM</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vans Clothing Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

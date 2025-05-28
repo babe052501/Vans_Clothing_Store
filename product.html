@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vans Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()" aria-label="Toggle navigation"></i>
+    <input type="checkbox" id="nav-toggle" />
+    <nav class="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="aboutus.html" onclick="closeMenu()">About Us</a>
+      <a href="contactus.html" onclick="closeMenu()">Contact Us</a>
+      <a href="feedback.html" onclick="closeMenu()">FeedBack</a>
+    </nav>
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Vans clothing..." aria-label="Search" />
+    </div>
+    <div class="icons">
+      <a href="location.html" aria-label="Store locator"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="signup.html" aria-label="User profile"><i class="fas fa-user"></i></a>
+      <a href="cart.html" aria-label="Shopping cart"><i class="fas fa-shopping-cart cart-counter" data-count="0"></i></a>
+    </div>
+  </header>
+
+  <!-- Product Grid -->
+  <section class="products">
+    <h2>All Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="image/OIP.jpg" alt="Vans Classic Hoodie">
+        <h3>Vans Classic Hoodie</h3>
+        <p>$59.99</p>
+        <button onclick="addToCart('Vans Classic Hoodie', 59.99, 'image/OIP.jpg')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/4392064.webp" alt="Vans Logo T-Shirt">
+        <h3>Vans Logo T-Shirt</h3>
+        <p>$29.99</p>
+        <button onclick="addToCart('Vans Logo T-Shirt', 29.99, 'image/4392064.webp')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/vans-old-skool-black-white-2.webp" alt="Vans Old Skool">
+        <h3>Vans Old Skool</h3>
+        <p>$89.99</p>
+        <button onclick="addToCart('Vans Old Skool', 89.99, 'image/vans-old-skool-black-white-2.webp')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/vans knu skool.webp" alt="Vans Knu Skool">
+        <h3>Vans Knu Skool</h3>
+        <p>$69.99</p>
+        <button onclick="addToCart('Vans Knu Skool', 69.99, 'image/vans knu skool.webp')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/OIF.jpg" alt="Vans Slip-On">
+        <h3>Vans Classic Slip-On</h3>
+        <p>$49.99</p>
+        <button onclick="addToCart('Vans Classic Slip-On', 49.99, 'image/OIF.jpg')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/Screenshot 2025-05-25 183743.png" alt="Vans Backpack">
+        <h3>Vans Street Backpack</h3>
+        <p>$39.99</p>
+        <button onclick="addToCart('Vans Street Backpack', 39.99, 'image/Screenshot 2025-05-25 183743.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/Screenshot 2025-05-25 183840.png" alt="Vans Cap">
+        <h3>Vans Logo Cap</h3>
+        <p>$24.99</p>
+        <button onclick="addToCart('Vans Logo Cap', 24.99, 'image/Screenshot 2025-05-25 183840.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/Classic-Crew-Socks-6Pack.avif" alt="Vans Socks">
+        <h3>Vans Crew Socks (3-Pack)</h3>
+        <p>$14.99</p>
+        <button onclick="addToCart('Vans Crew Socks (3-Pack)', 14.99, 'image/Classic-Crew-Socks-6Pack.avif')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/Screenshot 2025-05-25 163031.png" alt="Vans Crew Sweater">
+        <h3>Vans Crew Sweater</h3>
+        <p>$34.99</p>
+        <button onclick="addToCart('Vans Crew Sweater', 34.99, 'image/Screenshot 2025-05-25 163031.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/Bail-Shoulder-Bag.avif" alt="Vans Bail Shoulder Bag">
+        <h3>Vans Bail-Shoulder-Bag</h3>
+        <p>$24.99</p>
+        <button onclick="addToCart('Vans Bail-Shoulder-Bag', 34.99, 'image/Bail-Shoulder-Bag.avif')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/BLABLA.avif" alt="Vans Beanie">
+        <h3>Vans Beanie</h3>
+        <p>$14.99</p>
+        <button onclick="addToCart('Vans Beanie', 34.99, 'image/BLABLA.avif')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/s-l1200.jpg" alt="Vans Cargo Pants">
+        <h3>Vans Cargo Pants</h3>
+        <p>$54.99</p>
+        <button onclick="addToCart('Vans Crew Sweater', 34.99, 'image/s-l1200.jpg')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vans Clothing Store. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+  
+</body>
+</html>

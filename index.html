@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vans Clothing Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()" aria-label="Toggle navigation"></i>
+    <input type="checkbox" id="nav-toggle" />
+    <nav class="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="aboutus.html" onclick="closeMenu()">About Us</a>
+      <a href="contactus.html" onclick="closeMenu()">Contact Us</a>
+      <a href="feedback.html" onclick="closeMenu()">FeedBack</a>
+    </nav>
+    <div class="search-container">
+      <i class="search"></i>
+      <input type="text" placeholder="Search Vans clothing..." aria-label="Search" />
+    </div>
+    <div class="icons">
+      <a href="location.html" aria-label="Store locator"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="signup.html" aria-label="User profile"><i class="fas fa-user"></i></a>
+      <a href="cart.html" aria-label="Shopping cart"><i class="fas fa-shopping-cart cart-counter" data-count="0"></i></a>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>Shop Authentic Vans Clothing</h1>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="image/OIP.jpg" alt="Vans Hoodie">
+        <h3>Vans Classic Hoodie</h3>
+        <p>$59.99</p>
+        <button onclick="addToCart('Vans Classic Hoodie')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/4392064.webp" alt="Vans T-Shirt">
+        <h3>Vans Logo T-Shirt</h3>
+        <p>$29.99</p>
+        <button onclick="addToCart('Vans Logo T-Shirt')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/vans knu skool.webp" alt="Vans Jacket">
+        <h3>Vans Old Skool</h3>
+        <p>$89.99</p>
+        <button onclick="addToCart('Vans Knu Skool')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="image/vans-old-skool-black-white-2.webp" alt="Vans Old Skool">
+        <h3>Vans Knu Skool</h3>
+        <p>$69.99</p>
+        <button onclick="addToCart('Vans Knu Skool')">Add to Cart</button>
+      </div>
+    </div>
+    <div class="view-more">
+      <a href="product.html">View More Products</a>
+    </div>
+    
+  </section>
+
+  <!-- Blog Section -->
+  <section class="blog">
+    <h2>Fashion Blog</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="image/style vans.png" alt="Streetwear Look">
+        <div class="blog-card-content">
+          <h3>How to Style Vans for Streetwear</h3>
+          <p>Vans sneakers and apparel are the backbone of streetwear fashion. Pair your Old Skool sneakers with ripped jeans and a graphic tee for an effortlessly cool look. Add a Vans hoodie for layering that screams urban vibe.</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="image/crew.png" alt="Skate Fashion">
+        <div class="blog-card-content">
+          <h3>The Evolution of Skate Fashion</h3>
+          <p>From the skateparks of the '70s to global runways, Vans has shaped skate fashion. Learn how the brand’s iconic checkered slip-ons became a cultural staple and how to incorporate them into modern outfits.</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="image/stakeboard.avif" alt="Sustainable Fashion">
+        <div class="blog-card-content">
+          <h3>Vans and Sustainable Fashion</h3>
+          <p>Vans is stepping up with eco-friendly materials and sustainable practices. Discover how the brand is reducing its footprint while keeping its rebellious, creative spirit alive in every collection.</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="image/stake.avif" alt="Vans for All Ages">
+        <div class="blog-card-content">
+          <h3>Vans Style for Every Age</h3>
+          <p>Explore how Vans caters to everyone with stylish options for women, men, and kids. From street-ready sneakers to casual outfits, see how our diverse collections inspire individuality across generations.</p>
+        </div>
+      </div>
+            <div class="blog-card">
+        <img src="image/vans-logo-free-download-free-vector.jpg" alt="Vans for All Ages">
+        <div class="blog-card-content">
+          <h3>Vans Self-Expression</h3>
+          <p>The Brand that defines self-expression in fashion senses.</p>
+        </div>
+      </div>
+            <div class="blog-card">
+        <img src="image/OIP (5).jpeg" alt="Vans for All Ages">
+        <div class="blog-card-content">
+          <h3>Vans Sneakers</h3>
+          <p>We have some of the latest and quality Vans sneakers in our store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vans Clothing Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

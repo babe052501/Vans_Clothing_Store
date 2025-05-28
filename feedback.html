@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vans Feedback</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()" aria-label="Toggle navigation"></i>
+    <input type="checkbox" id="nav-toggle" />
+    <nav class="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="aboutus.html" onclick="closeMenu()">About Us</a>
+      <a href="contactus.html" onclick="closeMenu()">Contact Us</a>
+      <a href="feedback.html" onclick="closeMenu()">FeedBack</a>
+    </nav>
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Vans clothing..." aria-label="Search" />
+    </div>
+    <div class="icons">
+      <a href="location.html" aria-label="Store locator"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="signup.html" aria-label="User profile"><i class="fas fa-user"></i></a>
+      <a href="cart.html" aria-label="Shopping cart"><i class="fas fa-shopping-cart cart-counter" data-count="0"></i></a>
+    </div>
+  </header>
+
+  <!-- Feedback Section -->
+  <section class="feedback">
+    <h2>Share Your Feedback</h2>
+    <p>We value your thoughts! Let us know about your experience with Vans Clothing Store.</p>
+    <div class="feedback-form">
+      <input type="text" placeholder="Your Name" aria-label="Your Name" required />
+      <input type="email" placeholder="Your Email" aria-label="Your Email" required />
+      <select aria-label="Rating" required>
+        <option value="" disabled selected>Rate Us (1-5 Stars)</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
+      <textarea placeholder="Your Comments" aria-label="Your Comments" required></textarea>
+      <button onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vans Clothing Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

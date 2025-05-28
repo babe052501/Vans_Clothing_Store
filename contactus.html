@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Vans Clothing Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()" aria-label="Toggle navigation"></i>
+    <input type="checkbox" id="nav-toggle" />
+    <nav class="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="aboutus.html" onclick="closeMenu()">About Us</a>
+      <a href="contactus.html" onclick="closeMenu()">Contact Us</a>
+      <a href="feedback.html" onclick="closeMenu()">FeedBack</a>
+    </nav>
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Vans clothing..." aria-label="Search" />
+    </div>
+ <div class="icons">
+      <a href="location.html" aria-label="Store locator"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="signup.html" aria-label="User profile"><i class="fas fa-user"></i></a>
+      <a href="cart.html" aria-label="Shopping cart"><i class="fas fa-shopping-cart cart-counter" data-count="0"></i></a>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Got a question about styling your Vans outfit? Interested in collaborating with us for a fashion project or event? Drop us a message, and let’s talk style, streetwear, or anything Vans-related!
+    </p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" name="name" />
+      <input type="email" placeholder="Your Email" name="email" />
+      <textarea placeholder="Your Message (e.g., styling tips, collaboration ideas)" name="message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Vans Clothing Store. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

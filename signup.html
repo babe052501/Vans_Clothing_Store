@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vans Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()" aria-label="Toggle navigation"></i>
+    <input type="checkbox" id="nav-toggle" />
+    <nav class="nav-menu">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About Us</a>
+      <a href="contact.html" onclick="closeMenu()">Contact Us</a>
+      <a href="feedback.html" onclick="closeMenu()">FeedBack</a>
+    </nav>
+    <div class="search-container">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Vans clothing..." aria-label="Search" />
+    </div>
+    <div class="icons">
+      <a href="location.html" aria-label="Store locator"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="signup.html" aria-label="User profile"><i class="fas fa-user"></i></a>
+      <a href="cart.html" aria-label="Shopping cart"><i class="fas fa-shopping-cart cart-counter" data-count="0"></i></a>
+    </div>
+  </header>
+
+  <!-- Sign-Up Section -->
+  <section class="signup">
+    <h2>Sign Up</h2>
+    <p>Join the Vans community to get updates on new releases and exclusive offers!</p>
+    <div class="signup-form">
+      <input type="text" placeholder="First Name" aria-label="First Name" required />
+      <input type="text" placeholder="Last Name" aria-label="Last Name" required />
+      <input type="email" placeholder="Email Address" aria-label="Email Address" required />
+      <input type="password" placeholder="Password" aria-label="Password" required />
+      <button onclick="signUpAndRedirect()">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Vans Clothing Store. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function signUpAndRedirect() {
+      alert('Sign-up successful! You will be redirected to the homepage.');
+      window.location.href = 'index.html';
+    }
+
+    function toggleMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      navMenu.classList.toggle('active');
+      navToggle.checked = !navToggle.checked;
+    }
+
+    function closeMenu() {
+      const navMenu = document.querySelector('.nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      navMenu.classList.remove('active');
+      navToggle.checked = false;
+    }
+
+    // Accessibility: Allow Enter key to toggle menu
+    document.querySelector('.hamburger').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const navMenu = document.querySelector('.nav-menu');
+      const hamburger = document.querySelector('.hamburger');
+      if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>
