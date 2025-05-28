@@ -468,12 +468,23 @@ header {
         opacity: 0;
         transform: translateY(-10px);
         transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 1000;
       }
 
       .nav-menu.active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
+      }
+
+      .mobile-menu {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+     }
+
+      .mobile-menu[style*="display: none"] {
+        display: none !important;
       }
 
       .nav-menu a {
