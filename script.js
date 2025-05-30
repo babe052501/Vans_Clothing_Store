@@ -418,3 +418,68 @@ document.addEventListener('click', (e) => {
         closeMenu();
       }
     });
+// Function to display cart items
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
+            let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+            
+            // Clear existing items
+            cartItemsContainer.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                cartTotalElement.textContent = 'Total: BWP0.00';
+                return;
+            }
+
+            let total = 0;
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: BWP${item.price.toFixed(2)}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p>Subtotal: BWP${itemTotal.toFixed(2)}</p>
+                        <button onclick="removeFromCart('${item.name}')">Remove</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            cartTotalElement.textContent = `Total: BWP${total.toFixed(2)}`;
+        }
+
+        // Function to remove item from cart
+        function removeFromCart(productName) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+
+            // Find and update item
+            const itemIndex = cartItems.findIndex(item => item.name === productName);
+            if (itemIndex !== -1) {
+                cartCount -= cartItems[itemIndex].quantity;
+                cartItems.splice(itemIndex, 1);
+                
+                // Update localStorage
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                localStorage.setItem('cartCount', cartCount);
+                
+                // Update display
+                updateCartCounter();
+                displayCartItems();
+                alert(`${productName} removed from cart!`);
+            }
+        }
+
+        // Load cart items on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            displayCartItems();
+            updateCartCounter();
+        });
