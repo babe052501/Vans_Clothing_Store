@@ -48,32 +48,35 @@ function addToCart(productName, price, imageSrc) {
   // Load existing cart items
   cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
 
-  // Check if the product already exists in the cart
-  const existingItem = cartItems.find(item => item.name === productName);
-  if (existingItem) {
-    existingItem.quantity += 1; // Increment quantity
-  } else {
-    // Add new item to cart
-    cartItems.push({
-      name: productName,
-      price: price,
-      image: imageSrc,
-     quantity: 1
-    });
-  }
+function addToCart(productName, price, imageSrc) {
+    // Load existing cart items from localStorage or initialize an empty array
+    let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
 
-  // Update cart count
-  cartCount++;
-  localStorage.setItem('cartCount', cartCount);
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    // Check if the product already exists in the cart
+    const existingItem = cartItems.find(item => item.name === productName);
+    if (existingItem) {
+        existingItem.quantity += 1; // Increment quantity if item exists
+    } else {
+        // Add new item to cart with quantity 1
+        cartItems.push({
+            name: productName,
+            price: price,
+            image: imageSrc || 'product.html', // Fallback image
+            quantity: 1
+        });
+    }
 
- updateCartCounter();
-  alert(`$BWP{productName} added to cart! Total items: BWP{cartCount}. Redirecting to cart...`);
-  setTimeout(() => {
-    window.location.href = 'cart.html';
+    // Update cart count
+    cartCount++;
+    localStorage.setItem('cartCount', cartCount);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    updateCartCounter();
+    alert(`BWP{productName} added to cart! Total items: BWP{cartCount}. Redirecting to cart...`);
+    setTimeout(() => {
+        window.location.href = 'cart.html';
     }, 1000);
-  }
-
+}
 function removeFromCart(index) {
   // Decrease quantity or remove item
   if (cartItems[index].quantity > 1) {
