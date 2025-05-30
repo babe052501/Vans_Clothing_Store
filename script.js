@@ -68,7 +68,7 @@ function addToCart(productName, price, imageSrc) {
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
  updateCartCounter();
-  alert(`${productName} added to cart! Total items: ${cartCount}. Redirecting to cart...`);
+  alert(`$BWP{productName} added to cart! Total items: BWP{cartCount}. Redirecting to cart...`);
   setTimeout(() => {
     window.location.href = 'cart.html';
     }, 1000);
@@ -128,7 +128,7 @@ function renderCartItems() {
     cartItem.innerHTML = `
       <img src="BWP{item.image}" alt="BWP{item.name}" style="width: 100px;">
         <div>
-          <h3>${item.name}</h3>
+          <h3>BWP{item.name}</h3>
           <p>Price: BWPBWP{item.price.toFixed(2)}</p>
           <p>Quantity: BWP{item.quantity}</p>
           <p>Subtotal: BWPBWP{itemTotal.toFixed(2)}</p>
